@@ -10,3 +10,4 @@
 0010-Fix-nfs_truncate_shares-without-etc-exports.d.patch
 0011-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
 0012-linux-zvols-correctly-detect-flush-requests.patch
+0013-contrib-initramfs-use-LVM-autoactivation-for-activat.patch
