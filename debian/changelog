@@ -1,3 +1,11 @@
+zfs-linux (2.2.7-pve2) bookworm; urgency=medium
+
+  * fix zvol sync/flush regression introduced in ZFS 2.2.7
+
+  * zfs-initramfs: limit LV activation to those with the autoactivation flag
+
+ -- Proxmox Support Team <support@proxmox.com>  Sun, 16 Mar 2025 20:13:19 +0100
+
 zfs-linux (2.2.7-pve1) bookworm; urgency=medium
 
   * update to new ZFS upstream 2.2.7 release
