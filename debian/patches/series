@@ -11,3 +11,5 @@
 0011-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
 0012-linux-zvols-correctly-detect-flush-requests.patch
 0013-contrib-initramfs-use-LVM-autoactivation-for-activat.patch
+0014-Linux-6.14-dops-d_revalidate-now-takes-four-args.patch
+0015-Linux-6.14-BLK_MQ_F_SHOULD_MERGE-was-removed.patch
