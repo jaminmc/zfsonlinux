@@ -25,7 +25,6 @@ ZFS_DEB2= $(ZFS_DEB_BINARY)			\
 libzfslinux-dev_$(DEB_VERSION)_amd64.deb		\
 python3-pyzfs_$(DEB_VERSION)_amd64.deb		\
 pyzfs-doc_$(DEB_VERSION)_all.deb			\
-spl_$(DEB_VERSION)_all.deb			\
 zfs-initramfs_$(DEB_VERSION)_all.deb
 DEBS= $(ZFS_DEB1) $(ZFS_DEB2) $(ZFS_DBG_DEBS)
 
