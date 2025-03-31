@@ -28,6 +28,7 @@ Vcs-Browser: https://git.proxmox.com/?p=zfsonlinux.git;a=summary
 Package: libnvpair3linux
 Section: contrib/libs
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: libnvpair1, libnvpair1linux, libnvpair2linux, libnvpair3
 Replaces: libnvpair1, libnvpair1linux, libnvpair2linux, libnvpair3
@@ -51,6 +52,7 @@ Description: PAM module for managing encryption keys for ZFS
 Package: libuutil3linux
 Section: contrib/libs
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: libuutil1, libuutil1linux, libuutil2linux, libuutil3
 Replaces: libuutil1, libuutil1linux, libuutil2linux, libuutil3
@@ -68,6 +70,7 @@ Description: Solaris userland utility library for Linux
 Package: libzfslinux-dev
 Section: contrib/libdevel
 Architecture: linux-any
+Multi-Arch: same
 Depends: libblkid-dev,
          libssl-dev | libssl1.0-dev,
          libtirpc-dev,
@@ -89,6 +92,7 @@ Description: OpenZFS filesystem development files for Linux
 Package: libzfs6linux
 Section: contrib/libs
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 # The libcurl4 is loaded through dlopen("libcurl.so.4").
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988521
@@ -105,6 +109,7 @@ Description: OpenZFS filesystem library for Linux - general support
 Package: libzfsbootenv1linux
 Section: contrib/libs
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: libzfs2, libzfs4
 Replaces: libzfs2, libzfs4
@@ -118,6 +123,7 @@ Description: OpenZFS filesystem library for Linux
 Package: libzpool6linux
 Section: contrib/libs
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: libzpool2, libzpool2linux, libzpool3linux, libzpool4, libzpool5linux
 Replaces: libzpool2, libzpool2linux, libzpool3linux, libzpool4, libzpool5linux
@@ -152,6 +158,7 @@ Description: wrapper for libzfs_core C library
 Package: pyzfs-doc
 Section: contrib/doc
 Architecture: all
+Multi-Arch: foreign
 Depends:
  ${sphinxdoc:Depends},
  ${sphinxdoc:Built-Using},
@@ -176,6 +183,7 @@ Description: wrapper for libzfs_core C library (documentation)
 
 Package: zfs-initramfs
 Architecture: all
+Multi-Arch: foreign
 Depends: busybox-initramfs | busybox-static | busybox,
          initramfs-tools,
          zfsutils-linux (>= ${binary:Version}),
@@ -192,6 +200,7 @@ Description: OpenZFS root filesystem capabilities for Linux - initramfs
 
 Package: zfs-dracut
 Architecture: all
+Multi-Arch: foreign
 Depends: dracut,
          zfsutils-linux (>= ${source:Version}),
          ${misc:Depends}
