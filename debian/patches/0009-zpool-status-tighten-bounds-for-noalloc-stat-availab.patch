@@ -51,10 +51,10 @@ Signed-off-by: Thomas Lamprecht <t.lamprecht@proxmox.com>
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/cmd/zpool/zpool_main.c b/cmd/zpool/zpool_main.c
-index ed0b8d7a1..f3acc49d0 100644
+index 5fcf0991de6623b44a5af07ad313b59017ae4484..b5d0735cd089b3286b0740e5691d3fcda54a44cb 100644
 --- a/cmd/zpool/zpool_main.c
 +++ b/cmd/zpool/zpool_main.c
-@@ -2663,7 +2663,8 @@ print_status_config(zpool_handle_t *zhp, status_cbdata_t *cb, const char *name,
+@@ -3116,7 +3116,8 @@ print_status_config(zpool_handle_t *zhp, status_cbdata_t *cb, const char *name,
  
  	if (vs->vs_scan_removing != 0) {
  		(void) printf(gettext("  (removing)"));

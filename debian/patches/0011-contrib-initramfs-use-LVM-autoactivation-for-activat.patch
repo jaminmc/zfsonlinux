@@ -1,4 +1,4 @@
-From 3726c500deffadce1012b5c5ccf19515bb58bdbb Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Friedrich Weber <f.weber@proxmox.com>
 Date: Thu, 6 Mar 2025 11:44:36 +0100
 Subject: [PATCH] contrib/initramfs: use LVM autoactivation for activating VGs
@@ -29,7 +29,7 @@ Signed-off-by: Friedrich Weber <f.weber@proxmox.com>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/contrib/initramfs/scripts/local-top/zfs b/contrib/initramfs/scripts/local-top/zfs
-index 6b80e9f43..fc455077e 100755
+index 6b80e9f43607215a377adac12936ddfa463e1d79..fc455077ec94fbd14343023ace2d7c2c7ba71159 100755
 --- a/contrib/initramfs/scripts/local-top/zfs
 +++ b/contrib/initramfs/scripts/local-top/zfs
 @@ -41,9 +41,9 @@ activate_vg()
@@ -44,6 +44,3 @@ index 6b80e9f43..fc455077e 100755
          return $?
  }
  
--- 
-2.39.5
-

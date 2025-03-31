@@ -6,10 +6,6 @@
 0006-dont-symlink-zed-scripts.patch
 0007-Add-systemd-unit-for-importing-specific-pools.patch
 0008-Patch-move-manpage-arcstat-1-to-arcstat-8.patch
-0009-arc-stat-summary-guard-access-to-freshly-introduced-.patch
-0010-Fix-nfs_truncate_shares-without-etc-exports.d.patch
-0011-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
-0012-linux-zvols-correctly-detect-flush-requests.patch
-0013-contrib-initramfs-use-LVM-autoactivation-for-activat.patch
-0014-Linux-6.14-dops-d_revalidate-now-takes-four-args.patch
-0015-Linux-6.14-BLK_MQ_F_SHOULD_MERGE-was-removed.patch
+0009-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
+0010-linux-zvols-correctly-detect-flush-requests-17131.patch
+0011-contrib-initramfs-use-LVM-autoactivation-for-activat.patch

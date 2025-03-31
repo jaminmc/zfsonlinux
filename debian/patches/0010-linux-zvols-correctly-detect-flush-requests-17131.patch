@@ -1,7 +1,7 @@
-From 4482e91446c35d4194be49b715c6bb8a3ad9ba18 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Fabian-Gruenbichler <f.gruenbichler@proxmox.com>
 Date: Wed, 12 Mar 2025 22:39:01 +0100
-Subject: [PATCH 12/12] linux: zvols: correctly detect flush requests (#17131)
+Subject: [PATCH] linux: zvols: correctly detect flush requests (#17131)
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -46,10 +46,10 @@ Signed-off-by: Fabian Grünbichler <f.gruenbichler@proxmox.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/include/os/linux/kernel/linux/blkdev_compat.h b/include/os/linux/kernel/linux/blkdev_compat.h
-index c0d377074..26e7b0b2a 100644
+index d96708c600ac6f8b07354286a0745dcdcf84cccb..9af496e8777b389733745ce37655c1ee1de67633 100644
 --- a/include/os/linux/kernel/linux/blkdev_compat.h
 +++ b/include/os/linux/kernel/linux/blkdev_compat.h
-@@ -356,7 +356,7 @@ bio_set_flush(struct bio *bio)
+@@ -383,7 +383,7 @@ bio_set_flush(struct bio *bio)
  static inline boolean_t
  bio_is_flush(struct bio *bio)
  {
@@ -58,6 +58,3 @@ index c0d377074..26e7b0b2a 100644
  }
  
  /*
--- 
-2.39.5
-
