@@ -1,3 +1,22 @@
+zfs-linux (2.3.2-pve1) trixie; urgency=medium
+
+  * update ZFS to new 2.3.2 upstream release and refresh patches.
+
+  * install  manpages for zpool-ddtprune and zpool-prefetch.
+
+  * bump library SONAMEs: libzfs4 -> libzfs6, libzpool5 -> libzpool6
+
+  * remove transitional spl package, not required anymore.
+
+  * make the libzfslinux-dev package depend on libtirpc-dev and zlib1g-dev.
+
+  * add Multi-Arch attributes for binary packages.
+
+  * avoid installing files in the aliased /lib, /bin or /sbin directories,
+    rather prefer the ones in /usr/.
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 14 May 2025 19:50:27 +0200
+
 zfs-linux (2.2.7-pve2) bookworm; urgency=medium
 
   * fix zvol sync/flush regression introduced in ZFS 2.2.7
