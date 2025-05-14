@@ -3,7 +3,7 @@ Section: contrib/kernel
 Priority: optional
 Maintainer: Proxmox Support Team <support@proxmox.com>
 Build-Depends: abigail-tools,
-               debhelper-compat (= 12),
+               debhelper-compat (= 13),
                dh-python,
                libaio-dev,
                libblkid-dev,
