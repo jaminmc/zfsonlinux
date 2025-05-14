@@ -7,5 +7,3 @@
 0007-Add-systemd-unit-for-importing-specific-pools.patch
 0008-Patch-move-manpage-arcstat-1-to-arcstat-8.patch
 0009-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
-0010-linux-zvols-correctly-detect-flush-requests-17131.patch
-0011-contrib-initramfs-use-LVM-autoactivation-for-activat.patch
