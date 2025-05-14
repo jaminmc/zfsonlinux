@@ -1,6 +1,6 @@
-sbin/zinject
-sbin/ztest
 usr/bin/raidz_test
+usr/sbin/zinject
+usr/sbin/ztest
 usr/share/man/man1/raidz_test.1
 usr/share/man/man1/test-runner.1
 usr/share/man/man1/ztest.1
