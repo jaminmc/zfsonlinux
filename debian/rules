@@ -61,14 +61,6 @@ override_dh_auto_install:
 	@# Install the utilities.
 	$(MAKE) install DESTDIR='$(CURDIR)/debian/tmp'
 
-	# Move from bin_dir to /usr/sbin
-	# Remove suffix (.py) as per policy 10.4 - Scripts
-	# https://www.debian.org/doc/debian-policy/ch-files.html#s-scripts
-	mkdir -p '$(CURDIR)/debian/tmp/usr/sbin/'
-	mv '$(CURDIR)/debian/tmp/usr/bin/arc_summary' '$(CURDIR)/debian/tmp/usr/sbin/arc_summary'
-	mv '$(CURDIR)/debian/tmp/usr/bin/arcstat' '$(CURDIR)/debian/tmp/usr/sbin/arcstat'
-	mv '$(CURDIR)/debian/tmp/usr/bin/dbufstat' '$(CURDIR)/debian/tmp/usr/sbin/dbufstat'
-
 	chmod a-x '$(CURDIR)/debian/tmp/etc/zfs/zfs-functions'
 	chmod a-x '$(CURDIR)/debian/tmp/etc/default/zfs'
 
