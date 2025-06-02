@@ -25,6 +25,7 @@ Standards-Version: 4.7.2
 Homepage: https://www.zfsonlinux.org/
 Vcs-Git: https://git.proxmox.com/git/zfsonlinux.git
 Vcs-Browser: https://git.proxmox.com/?p=zfsonlinux.git;a=summary
+Rules-Requires-Root: no
 
 Package: libnvpair3linux
 Section: contrib/libs
