@@ -38,10 +38,10 @@ diff --git a/man/man1/arcstat.1 b/man/man8/arcstat.8
 similarity index 99%
 rename from man/man1/arcstat.1
 rename to man/man8/arcstat.8
-index 019a8270204a2551035a407ca0e3537ef1d345f3..4128104d5e32ea8804c80712971685c1279cac9b 100644
+index f2474fbb701f4d689965a44ecba42e8f3f3444d8..5ab0018ec87266c9068fd06c456cc2288bab7d59 100644
 --- a/man/man1/arcstat.1
 +++ b/man/man8/arcstat.8
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
  .\" Copyright (c) 2020 by AJ Jordan. All rights reserved.
  .\"
  .Dd December 23, 2022
