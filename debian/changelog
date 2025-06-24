@@ -1,3 +1,14 @@
+zfs-linux (2.3.3-pve1) trixie; urgency=medium
+
+  * cherry-pick usr-merge fix for libzfs6linux to avoid edge case on upgrades.
+
+  * provide arc_summary in /usr/bin as it doesn't require root privileges.
+    Ship a symlink in /usr/sbin for backwards compat.
+
+  * update ZFS to new 2.3.3 upstream release.
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 24 Jun 2025 13:50:32 +0200
+
 zfs-linux (2.3.2-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.3.2 upstream release and refresh patches.
