@@ -1,3 +1,13 @@
+zfs-linux (2.3.4-pve1) trixie; urgency=medium
+
+  * update ZFS to new 2.3.4 upstream release and refresh patches.
+
+  * zfsutils-linux: ship man page of new zfs-rewrite tool.
+
+  * zfsutils-linux: ship new zfs-mount@.service systemd unit.
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 26 Aug 2025 18:23:22 +0200
+
 zfs-linux (2.3.3-pve1) trixie; urgency=medium
 
   * cherry-pick usr-merge fix for libzfs6linux to avoid edge case on upgrades.
