@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Brian Behlendorf <behlendorf1@llnl.gov>
+Date: Fri, 26 Sep 2025 10:00:18 -0700
+Subject: [PATCH] Linux 6.17 compat: META
+
+Update the META file to reflect compatibility with the 6.17
+kernel.
+
+Reviewed-by: Alexander Motin <alexander.motin@TrueNAS.com>
+Reviewed-by: Rob Norris <robn@despairlabs.com>
+Signed-off-by: Brian Behlendorf <behlendorf1@llnl.gov>
+Closes #17789
+(cherry picked from commit 654a2ccc74fcc8fc97aae54e2ce1de647d587ae2)
+Signed-off-by: Thomas Lamprecht <t.lamprecht@proxmox.com>
+---
+ META | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/META b/META
+index f2c90626528b48f00c122a7ca7f208d7691eeac0..c96da9b726b1467111cd726f57914e4c635564af 100644
+--- a/META
++++ b/META
+@@ -6,5 +6,5 @@ Release:       1
+ Release-Tags:  relext
+ License:       CDDL
+ Author:        OpenZFS
+-Linux-Maximum: 6.16
++Linux-Maximum: 6.17
+ Linux-Minimum: 4.18
