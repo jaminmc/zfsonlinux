@@ -51,7 +51,7 @@ Signed-off-by: Thomas Lamprecht <t.lamprecht@proxmox.com>
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/cmd/zpool/zpool_main.c b/cmd/zpool/zpool_main.c
-index 51c3963dd..75ea14bae 100644
+index 51c3963dd4f0bda04803e0be665e665be319a492..75ea14bae7bd8de047460240dac1dd4204fe48f4 100644
 --- a/cmd/zpool/zpool_main.c
 +++ b/cmd/zpool/zpool_main.c
 @@ -3117,7 +3117,8 @@ print_status_config(zpool_handle_t *zhp, status_cbdata_t *cb, const char *name,

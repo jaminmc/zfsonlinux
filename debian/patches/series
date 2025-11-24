@@ -7,5 +7,3 @@
 0007-Add-systemd-unit-for-importing-specific-pools.patch
 0008-Patch-move-manpage-arcstat-1-to-arcstat-8.patch
 0009-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
-0010-Linux-6.17-d_set_d_op-is-no-longer-available.patch
-0011-Linux-6.17-compat-META.patch
