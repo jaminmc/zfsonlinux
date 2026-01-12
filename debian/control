@@ -51,24 +51,6 @@ Description: PAM module for managing encryption keys for ZFS
  This provides a Pluggable Authentication Module (PAM) that automatically
  unlocks encrypted ZFS datasets upon login.
 
-Package: libuutil3linux
-Section: contrib/libs
-Architecture: linux-any
-Multi-Arch: same
-Depends: ${misc:Depends}, ${shlibs:Depends},
-Breaks: libuutil1, libuutil1linux, libuutil2linux, libuutil3,
-Replaces: libuutil1, libuutil1linux, libuutil2linux, libuutil3,
-Description: Solaris userland utility library for Linux
- This library provides a variety of glue functions for ZFS on Linux:
-  * libspl: The Solaris Porting Layer userland library, which provides APIs
-    that make it possible to run Solaris user code in a Linux environment
-    with relatively minimal modification.
-  * libavl: The Adelson-Velskii Landis balanced binary tree manipulation
-    library.
-  * libefi: The Extensible Firmware Interface library for GUID disk
-    partitioning.
-  * libshare: NFS, SMB, and iSCSI service integration for ZFS.
-
 Package: libzfslinux-dev
 Section: contrib/libdevel
 Architecture: linux-any
@@ -77,13 +59,12 @@ Depends: libblkid-dev,
          libnvpair3linux (= ${binary:Version}),
          libssl-dev | libssl1.0-dev,
          libtirpc-dev,
-         libuutil3linux (= ${binary:Version}),
          libzfs6linux (= ${binary:Version}),
          libzfsbootenv1linux (= ${binary:Version}),
          libzpool6linux (= ${binary:Version}),
          zlib1g-dev,
          ${misc:Depends},
-Provides: libnvpair-dev, libuutil-dev,
+Provides: libnvpair-dev,
 Description: OpenZFS filesystem development files for Linux
  Header files and static libraries for compiling software against
  libraries of OpenZFS filesystem.

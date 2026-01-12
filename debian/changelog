@@ -1,3 +1,30 @@
+zfs-linux (2.4.0-pve1) trixie; urgency=medium
+
+  * update ZFS to new 2.4.0 upstream release and refresh patches.
+
+  * rename arc_summary and arcstat utilities to zarcsummary and zarcstat to
+    avoid namespace conflicts with other packages.
+
+  * bump library SONAMEs: libzfs6 -> libzfs7, libzpool6 -> libzpool7.
+
+  * zfsutils-linux: add support for default user/group/project quotas.
+
+  * zfsutils-linux: improve encryption performance using AVX2 for AES-GCM.
+
+  * zfsutils-linux: add zfs rewrite -P option to preserve logical birth time.
+
+  * zfsutils-linux: add -a|--all option to scrub, trim, and initialize
+    commands for all imported pools.
+
+  * zfsutils-linux: add zpool scrub -S -E to scrub specific time ranges.
+
+  * zfsutils-linux: add zpool prefetch -t brt to prefetch BRT (block cloning
+    table).
+
+  * zfsutils-linux: add send:encrypted permission for encrypted send/recv.
+
+ -- Jaminmc <1310376+jaminmc@users.noreply.github.com>  Fri, 09 Jan 2026 18:10:00 -0500
+
 zfs-linux (2.3.4-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.3.4 upstream release and refresh patches.

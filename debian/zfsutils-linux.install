@@ -29,8 +29,8 @@ usr/lib/udev/
 usr/lib/zfs-linux/zfs_prepare_disk
 usr/lib/zfs-linux/zpool.d/
 usr/lib/zfs-linux/zpool_influxdb
-usr/bin/arc_summary
-usr/bin/arcstat usr/sbin
+usr/bin/zarcsummary
+usr/bin/zarcstat usr/sbin
 usr/bin/dbufstat usr/sbin
 usr/sbin/fsck.zfs
 usr/sbin/mount.zfs
@@ -54,7 +54,7 @@ usr/share/man/man7/zfsprops.7
 usr/share/man/man7/zpool-features.7
 usr/share/man/man7/zpoolconcepts.7
 usr/share/man/man7/zpoolprops.7
-usr/share/man/man8/arcstat.8
+usr/share/man/man1/zarcstat.1
 usr/share/man/man8/fsck.zfs.8
 usr/share/man/man8/mount.zfs.8
 usr/share/man/man8/vdev_id.8

@@ -11,7 +11,6 @@ ZFS_DEB1= libnvpair3linux_$(DEB_VERSION)_amd64.deb
 
 ZFS_DEB_BINARY =				\
 libpam-zfs_$(DEB_VERSION)_amd64.deb		\
-libuutil3linux_$(DEB_VERSION)_amd64.deb		\
 libzfs6linux_$(DEB_VERSION)_amd64.deb		\
 libzfsbootenv1linux_$(DEB_VERSION)_amd64.deb	\
 libzpool6linux_$(DEB_VERSION)_amd64.deb		\
