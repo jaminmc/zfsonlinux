@@ -162,7 +162,8 @@ Package: pyzfs-doc
 Section: contrib/doc
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${sphinxdoc:Built-Using}, ${sphinxdoc:Depends},
+Depends: ${misc:Depends}, ${sphinxdoc:Depends},
+Static-built-Using: ${sphinxdoc:Built-Using}
 Recommends: python3-pyzfs,
 Description: wrapper for libzfs_core C library (documentation)
  libzfs_core is intended to be a stable interface for programmatic
