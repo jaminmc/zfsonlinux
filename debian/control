@@ -78,9 +78,9 @@ Depends: libblkid-dev,
          libssl-dev | libssl1.0-dev,
          libtirpc-dev,
          libuutil3linux (= ${binary:Version}),
-         libzfs6linux (= ${binary:Version}),
+         libzfs7linux (= ${binary:Version}),
          libzfsbootenv1linux (= ${binary:Version}),
-         libzpool6linux (= ${binary:Version}),
+         libzpool7linux (= ${binary:Version}),
          zlib1g-dev,
          ${misc:Depends},
 Provides: libnvpair-dev, libuutil-dev,
@@ -89,9 +89,9 @@ Description: OpenZFS filesystem development files for Linux
  libraries of OpenZFS filesystem.
  .
  This package includes the development files of libnvpair3, libuutil3,
- libzpool6 and libzfs6, libzfsbootenv1.
+ libzpool7 and libzfs7, libzfsbootenv1.
 
-Package: libzfs6linux
+Package: libzfs7linux
 Section: contrib/libs
 Architecture: linux-any
 Multi-Arch: same
@@ -99,8 +99,9 @@ Depends: ${misc:Depends}, ${shlibs:Depends},
 # The libcurl4 is loaded through dlopen("libcurl.so.4").
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988521
 Recommends: libcurl4,
-Breaks: libzfs2, libzfs2linux, libzfs3linux, libzfs4, libzfs4linux,
-Replaces: libzfs2, libzfs2linux, libzfs3linux, libzfs4, libzfs4linux,
+# libzfs_core.so.3 is installed by libzfs7linux, so we need breaks/replaces
+Breaks: libzfs2, libzfs2linux, libzfs3linux, libzfs4, libzfs4linux, libzfs6linux,
+Replaces: libzfs2, libzfs2linux, libzfs3linux, libzfs4, libzfs4linux, libzfs6linux,
 Description: OpenZFS filesystem library for Linux - general support
  OpenZFS is a storage platform that encompasses the functionality of
  traditional filesystems and volume managers. It supports data checksums,
@@ -122,13 +123,13 @@ Description: OpenZFS filesystem library for Linux
  .
  The zfsbootenv library provides support for modifying ZFS label information.
 
-Package: libzpool6linux
+Package: libzpool7linux
 Section: contrib/libs
 Architecture: linux-any
 Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends},
-Breaks: libzpool2, libzpool2linux, libzpool3linux, libzpool4, libzpool5linux,
-Replaces: libzpool2, libzpool2linux, libzpool3linux, libzpool4, libzpool5linux,
+Breaks: libzpool2, libzpool5
+Replaces: libzpool2, libzpool5
 Description: OpenZFS pool library for Linux
  OpenZFS is a storage platform that encompasses the functionality of
  traditional filesystems and volume managers. It supports data checksums,
