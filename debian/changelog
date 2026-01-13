@@ -1,3 +1,9 @@
+zfs-linux (2.4.0-pve1) trixie; urgency=medium
+
+  * update ZFS to new 2.4.0 upstream release and refresh patches.
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 13 Jan 2026 18:19:35 +0100
+
 zfs-linux (2.3.5-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.3.5 upstream release and refresh patches.
