@@ -5,5 +5,4 @@
 0005-Enable-zed-emails.patch
 0006-dont-symlink-zed-scripts.patch
 0007-Add-systemd-unit-for-importing-specific-pools.patch
-0008-Patch-move-manpage-arcstat-1-to-arcstat-8.patch
-0009-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
+0008-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
