@@ -1,7 +1,7 @@
 spare-manual-page
 systemd-service-file-refers-to-unusual-wantedby-target
-no-manual-page [usr/sbin/dbufstat]
-no-manual-page [usr/sbin/arc_summary]
+no-manual-page [usr/bin/dbufstat]
+no-manual-page [usr/bin/zarcsummary]
 no-manual-page [usr/sbin/zilstat]
 groff-message
 appstream-metadata-missing-modalias-provide
