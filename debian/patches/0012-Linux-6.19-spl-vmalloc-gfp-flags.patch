@@ -1,0 +1,75 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: JaminMc <1310376+jaminmc@users.noreply.github.com>
+Date: Wed, 28 Jan 2026 00:00:00 +0000
+Subject: [PATCH] Linux 6.19: avoid invalid GFP flags for vmalloc
+
+Linux 6.19 warns and sanitizes vmalloc() GFP flags such as __GFP_HIGHMEM
+and __GFP_COMP. SPL was explicitly OR-ing __GFP_HIGHMEM onto flags passed
+to spl_vmalloc(), which triggers the warning in __vmalloc_noprof().
+
+For kernels >= 6.19, stop adding __GFP_HIGHMEM to vmalloc allocations and
+just pass the converted GFP mask through. For older kernels retain the
+existing behavior to avoid behavior changes.
+
+---
+ module/os/linux/spl/spl-kmem-cache.c | 7 ++++++-
+ module/os/linux/spl/spl-kmem.c       | 8 +++++++-
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+
+--- a/module/os/linux/spl/spl-kmem.c
++++ b/module/os/linux/spl/spl-kmem.c
+@@ -26,6 +26,7 @@
+ #include <sys/sysmacros.h>
+ #include <sys/kmem.h>
+ #include <sys/vmem.h>
++#include <linux/version.h>
+ 
+ /*
+  * As a general rule kmem_alloc() allocations should be small, preferably
+@@ -188,7 +189,11 @@
+ 		return (ptr);
+ 	}
+ 
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 19, 0)
++	return (spl_vmalloc(size, lflags));
++#else
+ 	return (spl_vmalloc(size, lflags | __GFP_HIGHMEM));
++#endif
+ }
+ 
+ /*
+@@ -237,7 +242,11 @@
+ 		 */
+ 		if (size > spl_kmem_alloc_max) {
+ 			if (flags & KM_VMEM) {
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 19, 0)
++				ptr = spl_vmalloc(size, lflags);
++#else
+ 				ptr = spl_vmalloc(size, lflags | __GFP_HIGHMEM);
++#endif
+ 			} else {
+ 				return (NULL);
+ 			}
+--- a/module/os/linux/spl/spl-kmem-cache.c
++++ b/module/os/linux/spl/spl-kmem-cache.c
+@@ -34,6 +34,7 @@
+ #include <linux/slab.h>
+ #include <linux/swap.h>
+ #include <linux/prefetch.h>
++#include <linux/version.h>
+ 
+ /*
+  * Linux 3.16 replaced smp_mb__{before,after}_{atomic,clear}_{dec,inc,bit}()
+@@ -144,7 +145,12 @@
+ 
+ 	if (skc->skc_flags & KMC_RECLAIMABLE)
+ 		lflags |= __GFP_RECLAIMABLE;
++
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 19, 0)
++	ptr = spl_vmalloc(size, lflags);
++#else
+ 	ptr = spl_vmalloc(size, lflags | __GFP_HIGHMEM);
++#endif
+ 
+ 	/* Resulting allocated memory will be page aligned */
+ 	ASSERT(IS_P2ALIGNED(ptr, PAGE_SIZE));

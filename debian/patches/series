@@ -6,3 +6,7 @@
 0006-dont-symlink-zed-scripts.patch
 0007-Add-systemd-unit-for-importing-specific-pools.patch
 0008-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
+0009-Linux-6.19-compat-META.patch
+0010-Linux-6.19-Handel-werror.patch
+0011-Linux-6.19-zfs-i_state-linkable.patch
+0012-Linux-6.19-spl-vmalloc-gfp-flags.patch
