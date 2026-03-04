@@ -1,3 +1,9 @@
+zfs-linux (2.4.1-pve1) trixie; urgency=medium
+
+  * update ZFS to new 2.4.1 upstream release.
+
+ -- Jaminmc <1310376+jaminmc@users.noreply.github.com>  Wed, 04 Mar 2026 13:56:40 -0500
+
 zfs-linux (2.4.0-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.4.0 upstream release and refresh patches.
