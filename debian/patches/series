@@ -7,3 +7,8 @@
 0007-Add-systemd-unit-for-importing-specific-pools.patch
 0008-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
 0009-libzfs-scrub-only-include-start-and-end-nv-pairs-if-.patch
+0010-Linux-7.0-explicitly-set-setlease-handler-to-kernel-.patch
+0011-Linux-7.0-blk_queue_nonrot-renamed-to-blk_queue_rot.patch
+0012-Linux-7.0-posix_acl_to_xattr-now-allocates-memory.patch
+0013-Linux-7.0-add-shims-for-the-fs_context-based-mount-A.patch
+0014-Linux-7.0-WIP-compat-META.patch
