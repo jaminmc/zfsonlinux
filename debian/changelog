@@ -1,3 +1,9 @@
+zfs-linux (2.4.1-pve2) trixie; urgency=medium
+
+  * add preliminary support for Linux kernel 7.0.0.
+
+ -- Jaminmc <1310376+jaminmc@users.noreply.github.com>  Thu, 12 Mar 2026 12:00:00 +0000
+
 zfs-linux (2.4.1-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.4.1 upstream release.
