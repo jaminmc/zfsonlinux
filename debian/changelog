@@ -1,16 +1,16 @@
-zfs-linux (2.4.1-pve2) trixie; urgency=medium
-
-  * fix scrub breaking with newer userspace utils and older kernel module
-
-  * add compat symlinks for zarcstat, zarcsummary after rename
-
- -- Proxmox Support Team <support@proxmox.com>  Fri, 13 Mar 2026 15:10:00 +0100
-
 zfs-linux (2.4.1-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.4.1 upstream release and refresh patches.
 
- -- Proxmox Support Team <support@proxmox.com>  Mon, 09 Mar 2026 20:13:51 +0100
+  * fix scrub breaking with newer userspace utils and older kernel module,
+    like after installing the updates but before  rebooting.
+
+  * add backward compatibility symlinks for zarcstat, zarcsummary using the
+    old name without the "z" prefix.
+
+  * backport compatibility fixes for 7.0 based kernels.
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 17 Mar 2026 13:22:33 +0100
 
 zfs-linux (2.4.0-pve1) trixie; urgency=medium
 
