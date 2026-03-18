@@ -15,3 +15,4 @@
 0015-Linux-7.0-autoconf-Remove-copy-from-user-inatomic-AP.patch
 0016-Linux-7.0-ensure-LSMs-get-to-process-mount-options.patch
 0017-Linux-7.0-compat-META.patch
+0018-Add-no-preserve-encryption-flag.patch
