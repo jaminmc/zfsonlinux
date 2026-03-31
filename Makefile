@@ -7,23 +7,25 @@ SRCDIR = upstream
 BUILDDIR ?= $(PACKAGE)-$(DEB_VERSION_UPSTREAM)
 ORIG_SRC_TAR = $(PACKAGE)_$(DEB_VERSION_UPSTREAM).orig.tar.gz
 
-ZFS_DEB1= libnvpair3linux_$(DEB_VERSION)_amd64.deb
+ARCH = $(DEB_HOST_ARCH)
+
+ZFS_DEB1= libnvpair3linux_$(DEB_VERSION)_$(ARCH).deb
 
 ZFS_DEB_BINARY =				\
-libpam-zfs_$(DEB_VERSION)_amd64.deb		\
-libuutil3linux_$(DEB_VERSION)_amd64.deb		\
-libzfs7linux_$(DEB_VERSION)_amd64.deb		\
-libzfsbootenv1linux_$(DEB_VERSION)_amd64.deb	\
-libzpool7linux_$(DEB_VERSION)_amd64.deb		\
-zfs-test_$(DEB_VERSION)_amd64.deb			\
-zfsutils-linux_$(DEB_VERSION)_amd64.deb		\
-zfs-zed_$(DEB_VERSION)_amd64.deb
+libpam-zfs_$(DEB_VERSION)_$(ARCH).deb		\
+libuutil3linux_$(DEB_VERSION)_$(ARCH).deb		\
+libzfs7linux_$(DEB_VERSION)_$(ARCH).deb		\
+libzfsbootenv1linux_$(DEB_VERSION)_$(ARCH).deb	\
+libzpool7linux_$(DEB_VERSION)_$(ARCH).deb		\
+zfs-test_$(DEB_VERSION)_$(ARCH).deb			\
+zfsutils-linux_$(DEB_VERSION)_$(ARCH).deb		\
+zfs-zed_$(DEB_VERSION)_$(ARCH).deb
 
-ZFS_DBG_DEBS = $(patsubst %_$(DEB_VERSION)_amd64.deb, %-dbgsym_$(DEB_VERSION)_amd64.deb, $(ZFS_DEB1) $(ZFS_DEB_BINARY))
+ZFS_DBG_DEBS = $(patsubst %_$(DEB_VERSION)_$(ARCH).deb, %-dbgsym_$(DEB_VERSION)_$(ARCH).deb, $(ZFS_DEB1) $(ZFS_DEB_BINARY))
 
 ZFS_DEB2= $(ZFS_DEB_BINARY)			\
-libzfslinux-dev_$(DEB_VERSION)_amd64.deb		\
-python3-pyzfs_$(DEB_VERSION)_amd64.deb		\
+libzfslinux-dev_$(DEB_VERSION)_$(ARCH).deb		\
+python3-pyzfs_$(DEB_VERSION)_$(ARCH).deb		\
 pyzfs-doc_$(DEB_VERSION)_all.deb			\
 zfs-initramfs_$(DEB_VERSION)_all.deb
 DEBS= $(ZFS_DEB1) $(ZFS_DEB2) $(ZFS_DBG_DEBS)
@@ -89,4 +91,4 @@ distclean: clean
 .PHONY: upload
 upload: UPLOAD_DIST ?= $(DEB_DISTRIBUTION)
 upload: $(DEBS)
-	tar -cf - $(DEBS) | ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs,pdm --dist $(UPLOAD_DIST) --arch $(DEB_HOST_ARCH)
+	tar -cf - $(DEBS) | ssh repoman@repo.proxmox.com -- upload --product pve,pmg,pbs,pdm --dist $(UPLOAD_DIST) --arch $(ARCH)
