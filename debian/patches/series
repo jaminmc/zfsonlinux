@@ -11,4 +11,7 @@
 0011-Linux-7.0-blk_queue_nonrot-renamed-to-blk_queue_rot.patch
 0012-Linux-7.0-posix_acl_to_xattr-now-allocates-memory.patch
 0013-Linux-7.0-add-shims-for-the-fs_context-based-mount-A.patch
-0014-Linux-7.0-WIP-compat-META.patch
+0014-Linux-7.0-also-set-setlease-handler-on-directories-1.patch
+0015-Linux-7.0-autoconf-Remove-copy-from-user-inatomic-AP.patch
+0016-Linux-7.0-ensure-LSMs-get-to-process-mount-options.patch
+0017-Linux-7.0-compat-META.patch
