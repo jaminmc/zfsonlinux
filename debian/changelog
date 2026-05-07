@@ -1,3 +1,15 @@
+zfs-linux (2.4.1-pve2) trixie; urgency=medium
+
+  * add further patches for kernel 7.0 compatibility
+
+  * fix #2350: add flag to `zfs send` to allow unencrypted sending of encrypted
+    datasets
+
+  * fix kernel panic when a process was OOM-killed because a cgroup exceeded
+    its memory limits
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 07 May 2026 09:28:33 +0200
+
 zfs-linux (2.4.1-pve1) trixie; urgency=medium
 
   * update ZFS to new 2.4.1 upstream release and refresh patches.
