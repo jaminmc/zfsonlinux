@@ -1,3 +1,10 @@
+zfs-linux (2.4.2-pve1) trixie; urgency=medium
+
+  * update submodule to 2.4.2 which contains mostly the fixes for Linux 7.0
+    compatibility that we backported previously.
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 13 May 2026 22:39:39 +0200
+
 zfs-linux (2.4.1-pve2) trixie; urgency=medium
 
   * add further patches for kernel 7.0 compatibility
