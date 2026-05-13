@@ -41,7 +41,7 @@ Signed-off-by: Stoiko Ivanov <s.ivanov@proxmox.com>
  1 file changed, 5 insertions(+), 2 deletions(-)
 
 diff --git a/lib/libzfs/libzfs_pool.c b/lib/libzfs/libzfs_pool.c
-index db5cd6dc00ac4882f3877b5b3bd4ac50967626b3..1b59b50cbd1cff7b14e79f10fd8bb8564e8e0e7e 100644
+index 42a1ddcf28a62efb17f45d1a7870248bcdbb7ca3..9420c346431d7841a8edebf5e60075a6cfd1516f 100644
 --- a/lib/libzfs/libzfs_pool.c
 +++ b/lib/libzfs/libzfs_pool.c
 @@ -2797,8 +2797,11 @@ zpool_scan_range(zpool_handle_t *zhp, pool_scan_func_t func,

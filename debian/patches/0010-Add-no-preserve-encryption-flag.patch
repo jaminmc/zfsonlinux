@@ -21,7 +21,7 @@ Closes #18240
  5 files changed, 62 insertions(+), 22 deletions(-)
 
 diff --git a/cmd/zfs/zfs_main.c b/cmd/zfs/zfs_main.c
-index d39b6fe5f76b4d8cb4169718c753b994870560bb..9b5891e0c86bc5621886ef9e8edc0c784a573802 100644
+index ce948951a028a22ba21aba87035ae4b64b443fb9..7cd9a3479d549973ff842386f760b27ab9ad5636 100644
 --- a/cmd/zfs/zfs_main.c
 +++ b/cmd/zfs/zfs_main.c
 @@ -345,10 +345,10 @@ get_usage(zfs_help_t idx)
@@ -76,7 +76,7 @@ index 14930fb90622b706d7c45991817746a61e0fdd2d..c67d5f353e99b4273728ccffde1f4db6
  
  typedef boolean_t (snapfilter_cb_t)(zfs_handle_t *, void *);
 diff --git a/lib/libzfs/libzfs_sendrecv.c b/lib/libzfs/libzfs_sendrecv.c
-index 0e5cecc6cca9e78e7eb015000b010bab8fa2e36c..9d693223e1c854e94b7b5a0fcf11b089c077caf5 100644
+index 2c38333e18a19c4750f6219d11020096581fbb1d..fb446516d81563227664e9dc039abc2fcaa7e7e0 100644
 --- a/lib/libzfs/libzfs_sendrecv.c
 +++ b/lib/libzfs/libzfs_sendrecv.c
 @@ -258,6 +258,7 @@ typedef struct send_data {
