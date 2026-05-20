@@ -8,3 +8,4 @@
 0008-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
 0009-libzfs-scrub-only-include-start-and-end-nv-pairs-if-.patch
 0010-Add-no-preserve-encryption-flag.patch
+0011-spl_kvmalloc-remove-__GFP_COMP-before-calling-vmallo.patch
