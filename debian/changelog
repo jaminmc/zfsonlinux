@@ -1,3 +1,15 @@
+zfs-linux (2.4.3-pve1) trixie; urgency=medium
+
+  * update submodule to 2.4.3 (beta) with Linux 7.1 compatibility fixes
+
+  * add beta support for kernel 7.1
+
+  * refresh patches for new upstream release
+
+  * drop libuutil3linux; upstream 2.4.3 removed libuutil
+
+ -- JaminMc <1310376+jaminmc@users.noreply.github.com>  Tue, 16 Jun 2026 17:55:49 -0400
+
 zfs-linux (2.4.2-pve1) trixie; urgency=medium
 
   * update submodule to 2.4.2 which contains mostly the fixes for Linux 7.0

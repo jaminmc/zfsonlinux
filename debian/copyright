@@ -299,11 +299,6 @@ Copyright:
   2017, Lawrence Livermore National Security, LLC.
 License: CDDL-1.0
 
-Files: lib/libuutil/*
-Copyright: 1990-2010, Sun Microsystems, Inc.
-           2000, 2002, 2004-2007, 2009, 2010, Oracle and/or its affiliates.
-License: CDDL-1.0
-
 Files: lib/libzfs/*
 Copyright:
   2005, 2010, Oracle and/or its affiliates.

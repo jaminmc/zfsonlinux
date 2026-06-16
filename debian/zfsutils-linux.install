@@ -43,8 +43,11 @@ usr/sbin/zpool
 usr/sbin/zstream
 usr/sbin/zstreamdump
 usr/share/bash-completion/completions
+usr/share/man/man1/dbufstat.1
 usr/share/man/man1/zarcstat.1
+usr/share/man/man1/zarcsummary.1
 usr/share/man/man1/zhack.1
+usr/share/man/man1/zilstat.1
 usr/share/man/man1/zvol_wait.1
 usr/share/man/man4/spl.4
 usr/share/man/man4/zfs.4

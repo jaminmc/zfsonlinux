@@ -13,7 +13,6 @@ ZFS_DEB1= libnvpair3linux_$(DEB_VERSION)_$(ARCH).deb
 
 ZFS_DEB_BINARY =				\
 libpam-zfs_$(DEB_VERSION)_$(ARCH).deb		\
-libuutil3linux_$(DEB_VERSION)_$(ARCH).deb		\
 libzfs7linux_$(DEB_VERSION)_$(ARCH).deb		\
 libzfsbootenv1linux_$(DEB_VERSION)_$(ARCH).deb	\
 libzpool7linux_$(DEB_VERSION)_$(ARCH).deb		\

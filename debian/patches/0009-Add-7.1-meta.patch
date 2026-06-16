@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: jaminmc <1310376+jaminmc@users.noreply.github.com>
+Date: Tue, 16 Jun 2026 18:02:22 -0400
+Subject: [PATCH] Add 7.1 meta
+
+---
+ META | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/META b/META
+index ab1b8955d245c32ae13d140340707d1eb0a381f2..26441ecdb7a45fae22d5b561cc00c5291443377e 100644
+--- a/META
++++ b/META
+@@ -1,10 +1,10 @@
+ Meta:          1
+ Name:          zfs
+ Branch:        1.0
+-Version:       2.4.99
++Version:       2.4.3
+ Release:       1
+ Release-Tags:  relext
+ License:       CDDL
+ Author:        OpenZFS
+-Linux-Maximum: 7.0
++Linux-Maximum: 7.1
+ Linux-Minimum: 4.18

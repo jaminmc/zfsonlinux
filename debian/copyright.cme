@@ -162,15 +162,10 @@ Files: include/*
 Copyright: 2000, 2002, 2004, 2005, 2007, 2009, 2010, Oracle and/or its affiliates.
 License: CDDL
 
-Files: include/libuutil_common.h
-  include/zfs_fletcher.h
+Files: include/zfs_fletcher.h
   include/zfs_prop.h
 Copyright: 2005-2010, Sun Microsystems, Inc.
 License: CDDL
-
-Files: include/libuutil_impl.h
-Copyright: 1990-2010, Sun Microsystems, Inc.
-License: CDDL-1.0 or only
 
 Files: include/libzfs.h
 Copyright: 2013, Steven Hartland.
@@ -648,21 +643,6 @@ License: CDDL-1.0 or only
 
 Files: lib/libspl/zone.c
 Copyright: 2006, Ricardo Correia.
-License: CDDL
-
-Files: lib/libuutil/*
-Copyright: 1990-2010, Sun Microsystems, Inc.
-License: CDDL-1.0 or only
-
-Files: lib/libuutil/uu_alloc.c
-  lib/libuutil/uu_misc.c
-  lib/libuutil/uu_string.c
-Copyright: 2000, 2002, 2004, 2005, 2007, 2009, 2010, Oracle and/or its affiliates.
-License: CDDL
-
-Files: lib/libuutil/uu_avl.c
-  lib/libuutil/uu_list.c
-Copyright: 2005-2010, Sun Microsystems, Inc.
 License: CDDL
 
 Files: lib/libzfs/*
