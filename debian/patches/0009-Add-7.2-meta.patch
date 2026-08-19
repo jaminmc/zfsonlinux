@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: jaminmc <1310376+jaminmc@users.noreply.github.com>
 Date: Tue, 16 Jun 2026 18:02:22 -0400
-Subject: [PATCH] Add 7.1 meta
+Subject: [PATCH] Add 7.2 meta
 
 ---
  META | 4 ++--
@@ -22,5 +22,5 @@ index ab1b8955d245c32ae13d140340707d1eb0a381f2..26441ecdb7a45fae22d5b561cc00c529
  License:       CDDL
  Author:        OpenZFS
 -Linux-Maximum: 7.0
-+Linux-Maximum: 7.1
++Linux-Maximum: 7.2
  Linux-Minimum: 4.18

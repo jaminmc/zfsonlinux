@@ -1,3 +1,10 @@
+zfs-linux (2.4.3-pve2) trixie; urgency=medium
+
+  * add Linux 7.2 compatibility: convert zpl_super to sget_fc()
+    (OpenZFS bf098c76a) and raise Linux-Maximum to 7.2.
+
+ -- JaminMc <1310376+jaminmc@users.noreply.github.com>  Wed, 19 Aug 2026 15:50:14 -0400
+
 zfs-linux (2.4.3-pve1) trixie; urgency=medium
 
   * update submodule to 2.4.3 (beta) with Linux 7.1 compatibility fixes

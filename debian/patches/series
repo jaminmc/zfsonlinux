@@ -6,4 +6,5 @@
 0006-dont-symlink-zed-scripts.patch
 0007-Add-systemd-unit-for-importing-specific-pools.patch
 0008-zpool-status-tighten-bounds-for-noalloc-stat-availab.patch
-0009-Add-7.1-meta.patch
+0009-Add-7.2-meta.patch
+0010-Linux-7.2-zpl_super-convert-to-sget_fc.patch

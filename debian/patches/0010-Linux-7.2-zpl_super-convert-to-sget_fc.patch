@@ -1,0 +1,117 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Rob Norris <rob.norris@truenas.com>
+Date: Wed, 1 Jul 2026 04:16:13 +1000
+Subject: [PATCH] Linux 7.2: zpl_super: convert to sget_fc()
+
+The old sget() superblock matcher has been removed in favour of the
+fscontext-based sget_fc(). This converts to it. Its largely a signature
+change, no functional change.
+
+sget_fc() has existed since fscontext was introduced, so there's no need
+for separate feature tests.
+
+Sponsored-by: TrueNAS
+Reviewed-by: Alexander Motin <alexander.motin@TrueNAS.com>
+Reviewed-by: Brian Behlendorf <behlendorf1@llnl.gov>
+Signed-off-by: Rob Norris <rob.norris@truenas.com>
+Closes #18677
+(cherry picked from commit bf098c76af2bf3243251e4dfc557360525e0b7d6)
+---
+ config/kernel-sget-args.m4      | 26 --------------------------
+ config/kernel.m4                |  2 --
+ module/os/linux/zfs/zpl_super.c | 13 +++++++------
+ 3 files changed, 7 insertions(+), 34 deletions(-)
+ delete mode 100644 config/kernel-sget-args.m4
+
+diff --git a/config/kernel-sget-args.m4 b/config/kernel-sget-args.m4
+deleted file mode 100644
+index 1c8a8d3291bef9a5c877bafeec00635e2dc2add1..0000000000000000000000000000000000000000
+--- a/config/kernel-sget-args.m4
++++ /dev/null
+@@ -1,26 +0,0 @@
+-dnl # SPDX-License-Identifier: CDDL-1.0
+-dnl #
+-dnl # 3.6 API change,
+-dnl # 'sget' now takes the mount flags as an argument.
+-dnl #
+-AC_DEFUN([ZFS_AC_KERNEL_SRC_SGET], [
+-	ZFS_LINUX_TEST_SRC([sget_5args], [
+-		#include <linux/fs.h>
+-	],[
+-		struct file_system_type *type = NULL;
+-		int (*test)(struct super_block *,void *) = NULL;
+-		int (*set)(struct super_block *,void *) = NULL;
+-		int flags = 0;
+-		void *data = NULL;
+-		(void) sget(type, test, set, flags, data);
+-	])
+-])
+-
+-AC_DEFUN([ZFS_AC_KERNEL_SGET], [
+-	AC_MSG_CHECKING([whether sget() wants 5 args])
+-	ZFS_LINUX_TEST_RESULT([sget_5args], [
+-		AC_MSG_RESULT(yes)
+-	],[
+-		ZFS_LINUX_TEST_ERROR([sget()])
+-	])
+-])
+diff --git a/config/kernel.m4 b/config/kernel.m4
+index 55f407675673475cf44fff44c68a0c41a9e5e622..4954e93c18dc1084e30797ef137fc58c4a5db02e 100644
+--- a/config/kernel.m4
++++ b/config/kernel.m4
+@@ -81,7 +81,6 @@ AC_DEFUN([ZFS_AC_KERNEL_TEST_SRC], [
+ 	ZFS_AC_KERNEL_SRC_FS_PARSE
+ 	ZFS_AC_KERNEL_SRC_SB_DYING
+ 	ZFS_AC_KERNEL_SRC_SET_NLINK
+-	ZFS_AC_KERNEL_SRC_SGET
+ 	ZFS_AC_KERNEL_SRC_VFS_FILEMAP_DIRTY_FOLIO
+ 	ZFS_AC_KERNEL_SRC_VFS_READ_FOLIO
+ 	ZFS_AC_KERNEL_SRC_VFS_MIGRATE_FOLIO
+@@ -205,7 +204,6 @@ AC_DEFUN([ZFS_AC_KERNEL_TEST_RESULT], [
+ 	ZFS_AC_KERNEL_FS_PARSE
+ 	ZFS_AC_KERNEL_SB_DYING
+ 	ZFS_AC_KERNEL_SET_NLINK
+-	ZFS_AC_KERNEL_SGET
+ 	ZFS_AC_KERNEL_VFS_FILEMAP_DIRTY_FOLIO
+ 	ZFS_AC_KERNEL_VFS_READ_FOLIO
+ 	ZFS_AC_KERNEL_VFS_MIGRATE_FOLIO
+diff --git a/module/os/linux/zfs/zpl_super.c b/module/os/linux/zfs/zpl_super.c
+index d7194e4f1f783ccf86636eb0539a65e556a62004..b89226d134df5706ad1fddcb970d63f05932ecfd 100644
+--- a/module/os/linux/zfs/zpl_super.c
++++ b/module/os/linux/zfs/zpl_super.c
+@@ -342,10 +342,10 @@ zpl_show_options(struct seq_file *seq, struct dentry *root)
+ }
+ 
+ static int
+-zpl_test_super(struct super_block *s, void *data)
++zpl_test_super(struct super_block *s, struct fs_context *fc)
+ {
+ 	zfsvfs_t *zfsvfs = s->s_fs_info;
+-	objset_t *os = data;
++	objset_t *os = fc->sget_key;
+ 	/*
+ 	 * If the os doesn't match the z_os in the super_block, assume it is
+ 	 * not a match. Matching would imply a multimount of a dataset. It is
+@@ -859,8 +859,8 @@ zpl_get_tree(struct fs_context *fc)
+ 		return (-err);
+ 
+ 	/*
+-	 * The dsl pool lock must be released prior to calling sget().
+-	 * It is possible sget() may block on the lock in grab_super()
++	 * The dsl pool lock must be released prior to calling sget_fc().
++	 * It is possible sget_fc() may block on the lock in grab_super()
+ 	 * while deactivate_super() holds that same lock and waits for
+ 	 * a txg sync.  If the dsl_pool lock is held over sget()
+ 	 * this can prevent the pool sync and cause a deadlock.
+@@ -868,8 +868,9 @@ zpl_get_tree(struct fs_context *fc)
+ 	dsl_dataset_long_hold(dmu_objset_ds(os), FTAG);
+ 	dsl_pool_rele(dmu_objset_pool(os), FTAG);
+ 
+-	sb = sget(fc->fs_type, zpl_test_super, set_anon_super,
+-	    fc->sb_flags, os);
++	fc->sget_key = os;
++	sb = sget_fc(fc, zpl_test_super, set_anon_super_fc);
++	fc->sget_key = NULL;
+ 
+ 	/*
+ 	 * Recheck with the lock held to prevent mounting the wrong dataset
